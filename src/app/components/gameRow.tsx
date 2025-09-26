@@ -3,8 +3,12 @@
 import Link from "next/link"
 import { useWishlist } from "../context/wishlistContext";
 import { useCart } from "../context/cartContext";
+import {game} from "../types/gameType"
 
-export function GameRow({game}){
+type Game = {
+    game: game
+}
+export function GameRow({game}: Game){
     const {cgames, setCgames} = useCart()
     const {wgames, setWgames} = useWishlist()
 
@@ -53,7 +57,7 @@ export function GameRow({game}){
         
     )
 }
-export function CartRow({game}){
+export function CartRow({game}: Game){
     const {setCgames} = useCart()
 
     const removeFromCart = () => {

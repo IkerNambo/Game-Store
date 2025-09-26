@@ -3,7 +3,7 @@ import Footer from "../components/footer";
 import { CartRow } from "../components/gameRow";
 import Navbar from "../components/navbar"
 import { useCart } from "../context/cartContext";
-import {Btn} from '@/app/components/button'
+import { Btn } from '../components/button'
 
 export default function Cart(){
     const {cgames, setCgames} = useCart()
