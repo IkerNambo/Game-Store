@@ -25,19 +25,19 @@ export default function Store(){
         <div className="flex flex-col min-h-screen">
             <div className="flex flex-col justify-center">
                 <Navbar/>
-                <div className="w-320 h-100 self-center flex justify-center mt-5 p-10 items-center">
+                <div className=" w-auto h-[70%] m-2 md:w-[95%] md:h-[60%] md:mt-5 self-center flex flex-col md:flex-row justify-center  md:p-10 items-center">
                     {
                         featuredIndex > 0 && (
-                            <button onClick={() => setFeaturedIndex(i => i-1)} className="absolute right-300">
+                            <button onClick={() => setFeaturedIndex(i => i-1)} className="">
                                 <svg className='fill-white bg-[#0045b4] rounded-2xl w-10 h-10' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
                             </button>
                         )
                     }
                     
                     <Link href={`/game/${featuredGames[featuredIndex]?.id}`}>
-                        <div className="bg-[#1e293b]  p-1.5 flex flex-row">
+                        <div className="bg-[#1e293b]  justify-center p-1.5 flex flex-col md:flex-row">
                             <div>
-                                <img src={featuredGames[featuredIndex]?.banner} alt='game banner' className="w-190"/>
+                                <img src={featuredGames[featuredIndex]?.banner} alt='game banner' className=" h-auto w-fit md:h-auto md:w-190"/>
                             </div>
                             <div className=" w-50 text-white flex flex-col items-center justify-center">
                                 <p className="font-semibold">{featuredGames[featuredIndex]?.name}</p>
@@ -47,14 +47,14 @@ export default function Store(){
                     </Link>
                      {
                         featuredIndex < featuredGames.length-1 && (
-                            <button onClick={() => setFeaturedIndex(i => i+1) } className="absolute left-300">
+                            <button onClick={() => setFeaturedIndex(i => i+1) } className="">
                                 <svg className='fill-white bg-[#0045b4] rounded-2xl w-10 h-10' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
                             </button>
                         )
                     }
                         
                 </div>
-                <div className="bg-[#1e293b] w-320 h-fit self-center flex justify-center mt-5 items-center mb-5 flex-col gap-5 p-10">
+                <div className="bg-[#1e293b] w-[90%] h-fit self-center flex justify-center mt-5 items-center mb-5 flex-col gap-5 p-10">
                     <div className="flex flex-wrap justify-center gap-1 m-1">
                         {
                         visibleGames.map((game) => {

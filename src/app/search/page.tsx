@@ -27,7 +27,7 @@ export default function Search(){
         <>
             <div className="flex flex-col min-h-screen">
                 <Navbar/>
-                    <div className="w-320 min-h-126 max-h-fit m-auto mb-3 flex-col justify-center">
+                    <div className="w-[90%] min-h-126 max-h-fit m-auto mb-3 flex-col justify-center">
                          <div className="flex justify-center text-2xl text-white bg-[#1e293b] mb-2 mt-2"> <h1>Search</h1> </div>
                         <div className="bg-amber-300 flex justify-center items-center p-3">
                             <form 

@@ -6,7 +6,7 @@ type contentProp = {
 
 export function Btn({content}: contentProp){
     return(
-        <button className="bg-[#0045b4] rounded-md p-2 m-3 w-40 text-white"> {content} </button>
+        <button className="bg-[#0045b4] rounded-md p-2 m-3 w-40 text-white hover:bg-[#0051d3]"> {content} </button>
     );
 }
 export function Btnnav({content}: contentProp){

@@ -7,7 +7,7 @@ import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/footer";
 import { useEffect, useState } from "react";
 import { useCart } from "@/app/context/cartContext";
-
+import { Btn } from "@/app/components/button";
 
 
 export default function Game(){
@@ -42,25 +42,34 @@ export default function Game(){
 
     const wtext = wgames.some((g) => g.id === game[0].id)? <div className="flex flex-row justify-center items-center gap-1">Added To Wishlist {check} </div>: <div>Add To Wishlist</div>
     const ctext = cgames.some((g) => g.id === game[0].id)? <div className="flex flex-row justify-center items-center gap-1">Added To Cart {check} </div>: <div className="flex justify-center items-center gap-1">Add To Cart</div>
+    if(game[0]?.id === undefined){
+        return(<>
+            <div className=" text-white m-auto flex flex-col self-center items-center justify-center mt-60">
+                    <h1 className="text-8xl font-bold">404</h1>
+                    <p className="font-bold">Seems like the page you were looking for does not exist..</p>
+                    <Link href='/store' className=""><Btn content="Return To Store"></Btn></Link>
+            </div>
+        </>)
+    }
     return(
         <>
         <div className="flex flex-col min-h-screen">
             <Navbar/>
                  
-                 <div className="w-320 flex m-auto justify-center text-2xl text-white bg-[#1e293b] mb-2 mt-2 "> <h1 className="font-bold">{game[0]?.name}</h1> </div>
-                 <div className="grid grid-cols-2 grid-rows-3 h-180 w-320 m-auto mt-1 gap-2">
+                 <div className="w-[90%] flex m-auto justify-center text-2xl text-white bg-[#1e293b] mb-2 mt-2 "> <h1 className="font-bold">{game[0]?.name}</h1> </div>
+                 <div className="grid grid-cols-1 gap-4 mb-20 md:grid-cols-2 md:grid-rows-3 h-fit md:h-180 w-[90%] m-auto mt-1 ">
                     
-                    <div className="h-90">
-                        <div className="">
+                    <div className="h-[60%] md:h-90">
+                        <div className="w-[100%]">
                             <img src={game[0]?.mediaList[shown]} alt="" className="rounded-sm"/>
                         </div>
 
-                        <div className="h-20 bg-[#1e293b] w-full flex p-1 pt-2.5 gap-1 justify-center items-center">
+                        <div className="h-22 bg-[#1e293b] w-full flex p-1 pt-2.5 gap-1 justify-center items-center overflow-auto">
                             {
                                 game[0]?.mediaList.map((picture, index) => {
                                     return(<div key={index}>
                                         <button onClick={() => setShown(index)}>
-                                            <img src={picture} alt="" className="h-17"/>
+                                            <img src={picture} alt="" className="h-[90%]"/>
                                         </button>
                                     </div>)
                                 })
@@ -71,7 +80,7 @@ export default function Game(){
                         </div>
                     </div>
 
-                    <div className="bg-[#1e293b]  text-white w-120 h-fit flex flex-col items-center justify-center my-auto rounded-t-2xl ml-auto">
+                    <div className="bg-[#1e293b]  text-white w-[100%] md:w-120 h-fit flex flex-col items-center justify-center my-auto rounded-t-2xl ml-auto">
                         <div>
                             <img src={game[0]?.banner} alt="" className="rounded-sm"/>
                         </div>

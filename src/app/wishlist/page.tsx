@@ -13,7 +13,7 @@ export default function Wishlist(){
         <div className="flex flex-col min-h-screen">
             <Navbar/>
             
-                <div className=" w-320 min-h-126 max-h-fit m-auto">
+                <div className=" w-[90%] min-h-126 max-h-fit m-auto mt-2">
                     <div className="flex justify-center text-2xl text-white bg-[#1e293b] mb-2 "> <h1>Wishlist</h1> </div>
                     <div className="h-fit bg-[#1e293b] flex flex-col gap-1 mb-2 p-1">
                         {

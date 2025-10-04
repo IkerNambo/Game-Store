@@ -5,7 +5,7 @@ export default function Footer(){
     return (
         <>
             
-            <div className="text-white bg-[#1e293b] flex bottom 0 items-center w-full">
+            <div className="text-white bg-[#1e293b] w-[100%] overflow-auto flex bottom 0 items-center ">
                 <div className="p-10 flex justify-center flex-col">
                     <h1 className="text-3xl font-bold">User Related</h1>
                     <ul className="flex gap-3">

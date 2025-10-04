@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Navbar(){
     return (
         <>
-            <div className="flex gap-15 bg-[#1e293b] w-320 h-15 m-auto mt-10 rounded-md justify-center items-center text-white">
+            <div className="flex flex-wrap gap-15 bg-[#1e293b] w-[90%] overflow-auto h-fit m-auto mt-10 rounded-md justify-center items-center text-white">
 
                     <Link href='/wishlist'>
                            <div className="flex-col justify-center items-center hover:bg-[#354765] active:bg-[#506a97] p-1 rounded-sm">

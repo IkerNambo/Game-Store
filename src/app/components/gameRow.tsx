@@ -35,15 +35,17 @@ export function GameRow({game}: Game){
     return(
            
         
-            <div className="text-white flex flex-row justify-baseline w-full h-30 items-center bg-[#0045b4] hover:bg-[#004cc7] gap-2 p-1">
+            <div className="text-white flex flex-col md:flex-row w-full h-fit items-center bg-[#0045b4] hover:bg-[#004cc7] gap-2 p-1 rounded-2xl">
             <Link href={`/game/${game.id}`} className="flex flex-row items-center h-full">
-            <img src={game.banner} alt=""  className="h-full"/>
+            <img src={game.banner} alt=""  className="h-auto w-auto md:h-30 rounded-2xl"/>
+
+            
+            </Link>
             <div className="flex flex-col ml-1 gap-1">
-                <p>{game.name}</p>
+                <p className="wrap-normal">{game.name}</p>
                 <p>${game.price}</p>
             </div>
-            </Link>
-            <div className="flex flex-col ml-auto mr-10 gap-2">
+            <div className="flex flex-col ml-auto m-auto md:mr-10 gap-2 ">
                 <button className="w-45 bg-[#1e293b] hover:bg-[#384d6e] rounded-2xl p-1.5" onClick={() => handleCart()}>
                     {cgames.some((g) => g.id === game.id)? <div className="flex flex-row justify-center items-center gap-1">Added To Cart {check} </div>: <div>Add To Cart</div>}
                 </button>
@@ -64,16 +66,18 @@ export function CartRow({game}: Game){
         setCgames((prev) => prev.filter((g) => g.id !== game.id))
     }   
     return(
-        <div className="text-white flex flex-row justify-baseline w-full h-30 items-center bg-[#0045b4] hover:bg-[#004cc7] gap-2 p-1">
-            <Link href={`/game/${game.id}`} className="flex flex-row items-center gap-2 h-full">
-            <img src={game.banner} alt=""  className="h-full"/>
-            <div className="flex flex-col">
-                <p>{game.name}</p>
+            <div className="text-white flex flex-col md:flex-row w-full h-fit items-center bg-[#0045b4] hover:bg-[#004cc7] gap-2 p-1 rounded-2xl">
+            <Link href={`/game/${game.id}`} className="flex flex-row items-center h-full">
+            <img src={game.banner} alt=""  className="h-auto w-auto md:h-30 rounded-2xl"/>
+
+            
+            </Link>
+            <div className="flex flex-col ml-1 gap-1">
+                <p className="wrap-normal">{game.name}</p>
                 <p>${game.price}</p>
             </div>
-            </Link>
-            <div className="ml-auto">
-                <button className="w-45 bg-[#1e293b] hover:bg-[#384d6e] rounded-2xl p-1.5 ml-auto"onClick={() => removeFromCart()}>
+            <div className="flex flex-col ml-auto m-auto md:mr-10 gap-2 ">
+                <button className="w-45 bg-[#1e293b] hover:bg-[#384d6e] rounded-2xl p-1.5" onClick={() => removeFromCart()}>
                     <p>Remove from cart</p>
                 </button>
                

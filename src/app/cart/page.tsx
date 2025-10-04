@@ -15,9 +15,9 @@ export default function Cart(){
         <>
         <div className="flex flex-col min-h-screen">
             <Navbar/>
-                <div className="w-320 flex m-auto justify-center text-2xl text-white bg-[#1e293b] mb-2 mt-2 "> <h1 className="font-bold">Cart</h1> </div>
+                <div className="w-[90%] flex m-auto justify-center text-2xl text-white bg-[#1e293b] mb-2 mt-2 "> <h1 className="font-bold">Cart</h1> </div>
                  
-                <div className="grid text-white grid-cols-2 grid-rows-2 h-130 w-320 m-auto">
+                <div className="grid text-white grid-cols-1 md:grid-cols-2 gap-4 grid-rows-2 h-auto mb-2 w-[90%] m-auto">
                     <div className="bg-[#1e293b] min-h-126 max-h-fit flex flex-col gap-1 p-1 row-span-full mb-2 overflow-auto">
                         {
                             cgames.length>0? cgames.map((game) => {
@@ -25,11 +25,11 @@ export default function Cart(){
                             }) : <h1 className="flex justify-center items-center">no items in cart</h1>
                         }
                     </div>
-                    <div className="bg-[#1e293b] justify-center w-120 h-60 flex my-auto mx-auto">
+                    <div className="bg-[#1e293b] justify-center w-[80%] h-60 flex my-auto mx-auto">
                         <div className="p-1 flex flex-col gap-10 justify-center">
                             <div>
                                 <p>We accept the following payment methods: </p>
-                            <ul className="flex flex-row justify-center gap-5">
+                            <ul className="flex flex-row flex-wrap justify-center gap-5">
                                 <li><img className="h-13" src="/images/visa.png" alt="" /></li>
                                 <li><img className="h-13" src="/images/mastercard.png" alt="" /></li>
                                 <li><img className="h-13" src="/images/paypal.png" alt="" /></li>
@@ -47,7 +47,7 @@ export default function Cart(){
 
                         </div>
                     </div>
-                    <div className="bg-[#1e293b] w-120 h-60 flex flex-col justify-center my-auto mx-auto">
+                    <div className="bg-[#1e293b] w-[80%]  h-60 flex flex-col justify-center my-auto mx-auto">
                         <div className="p-2 text-start overflow-auto">
                             {
                                 cgames.map((game, id) => {
