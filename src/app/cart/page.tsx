@@ -4,11 +4,17 @@ import { CartRow } from "../components/gameRow";
 import Navbar from "../components/navbar"
 import { useCart } from "../context/cartContext";
 import { Btn } from '../components/button'
+import { useEffect, useState } from "react";
 
 export default function Cart(){
     const {cgames, setCgames} = useCart()
+    const [total, setTotal] = useState(0)
 
-    const total = cgames.reduce((sum, game) => sum + game.price, 0).toFixed(2)
+    useEffect(() => {
+        const newTotal = cgames.reduce((sum, game) => sum + game.price, 0)
+        setTotal(parseFloat(newTotal.toFixed(2)))
+    }, [cgames])
+
 
     return (
 
