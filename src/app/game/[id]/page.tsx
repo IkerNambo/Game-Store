@@ -77,7 +77,7 @@ export default function Game(){
                                 })
                             }
                         </div>
-                        <div className="w-50 flex justify-center items-center text-center p-2 bg-[#404da1] text-white rounded-br-2xl rounded-tr-2xl">
+                        <div className="w-50 flex justify-center items-center text-center p-2 bg-[#404da1] text-white rounded-bl-2xl rounded-br-2xl">
                             <button onClick={() => handleWishlist()}>{wtext}</button>
                         </div>
                     </div>
@@ -101,7 +101,7 @@ export default function Game(){
                     <div className="row-start-3  w-full h-15 mt-5 flex flex-col">   
 
                         <div className=" text-white flex flex-row gap-5 items-center grid-rows-1 justify-center rounded-bl-2xl rounded-tl-2xl">
-                            <div className="bg-[#1e293b] flex p-3 gap-2 justify-center flex-col items-center w-full  overflow-hidden">
+                            <div className="bg-[#1e293b] rounded-2xl flex p-3 gap-2 justify-center flex-col items-center w-full  overflow-hidden">
                                     <p>Buy:</p>
                                     <p className="font-extrabold  text-[90%] md:text-2xl whitespace-nowrap ">
                                         {game[0]?.name}
@@ -110,7 +110,7 @@ export default function Game(){
              
                             
                         </div>
-                        <div className="flex items-center justify-baseline w-[100%]">
+                        <div className="flex items-center justify-center w-[100%]">
                             <div className=" text-white flex justify-right items-center"><p className="bg-black  rounded-bl-2xl flex justify-center p-2">${game[0]?.price}</p></div>
                             <button className=" flex justify-center p-2 bg-[#404da1] text-white rounded-br-2xl" onClick={() => handleCart()}>{ctext}</button>
                         </div>
