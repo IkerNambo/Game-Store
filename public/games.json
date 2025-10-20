@@ -8,7 +8,7 @@
             "publisher": "SEGA",
             "cover": "/covers/persona5banner.png",
             "banner": "/banners/persona5banner.png",
-            "mediaList": ["/media/pr2.jpg", "/media/pr1.jpg", "/media/pr3.jpg", "/media/pr4.jpg", "/media/pr5.jpg","/media/pr6.jpg"],
+            "mediaList": ["/media/pr2.jpg",  "/media/pr3.jpg", "/media/pr4.jpg", "/media/pr5.jpg","/media/pr6.jpg"],
             "details": "Don the mask and join the Phantom Thieves of Hearts as they stage grand heists, infiltrate the minds of the corrupt, and make them change their ways!",
             "genre": "Turn based RPG",
             "featured": false
@@ -203,7 +203,7 @@
             "publisher": "CAPCOM Co., Ltd.",
             "cover": "/covers/residentevil4cover.png",
             "banner": "/banners/residentevil4banner.jpg",                 
-            "mediaList": ["/media/re1.jpg", "/media/re2.jepg", "/media/re3.jpg" , "/media/re4.jpg"],
+            "mediaList": ["/media/re1.jpg", "/media/re3.jpg" , "/media/re4.jpg"],
             "details": "Survival is just the beginning. Six years have passed since the biological disaster in Raccoon City. Leon S. Kennedy, one of the survivors, tracks the president's kidnapped daughter to a secluded European village, where there is something terribly wrong",
             "genre": "Horror",
             "featured": false

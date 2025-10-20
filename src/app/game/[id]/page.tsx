@@ -8,18 +8,19 @@ import Footer from "@/app/components/footer";
 import { useEffect, useState } from "react";
 import { useCart } from "@/app/context/cartContext";
 import { Btn } from "@/app/components/button";
-
+import Image from "next/image";
 
 export default function Game(){
     const {games, loading} = useGames()
     const {cgames, setCgames} = useCart()
     const {wgames, setWgames} = useWishlist()
     const [shown, setShown] = useState(0)
-
+    
     const params = useParams()
     const gid = Number(params.id);
     const game = games.filter(game => game.id === gid)
   
+    
 
     const check = (<svg className='fill-white' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>);
     const handleCart = () => {
@@ -54,6 +55,7 @@ export default function Game(){
     return(
         <>
         <div className="flex flex-col min-h-screen">
+            
             <Navbar/>
                  
                  <div className="w-[90%] flex m-auto justify-center text-2xl text-white bg-[#1e293b] mb-2 mt-2 "> <h1 className="font-bold">{game[0]?.name}</h1> </div>
@@ -61,7 +63,7 @@ export default function Game(){
                     
                     <div className="h-[60%] md:h-90">
                         <div className="w-[100%]">
-                            <img src={game[0]?.mediaList[shown]} alt="" className="rounded-sm"/>
+                            <Image src={game[0]?.mediaList[shown]} width={631} height={200} alt="Example image" className="rounded-sm"/>
                         </div>
 
                         <div className="h-22 bg-[#1e293b] w-full flex p-1 pt-2.5 gap-1 justify-center items-center overflow-auto">
@@ -69,7 +71,7 @@ export default function Game(){
                                 game[0]?.mediaList.map((picture, index) => {
                                     return(<div key={index}>
                                         <button onClick={() => setShown(index)}>
-                                            <img src={picture} alt="" className="h-[90%]"/>
+                                            <Image src={picture} width={125} height={30}  alt="" className=""/>
                                         </button>
                                     </div>)
                                 })
@@ -82,7 +84,8 @@ export default function Game(){
 
                     <div className="bg-[#1e293b]  text-white w-[100%] md:w-120 h-fit flex flex-col items-center justify-center my-auto rounded-t-2xl ml-auto">
                         <div>
-                            <img src={game[0]?.banner} alt="" className="rounded-sm"/>
+                            <Image src={game[0]?.banner} width={500} height={200} 
+                             alt="videogame picture" className="rounded-sm"/>
                         </div>
                         <div className="flex flex-col justify-center m-2">
                             <p className="mb-2 mt-2">{game[0]?.details}</p>
@@ -95,18 +98,23 @@ export default function Game(){
                         </div>
                     </div>
                 
-                    <div className="row-start-3  w-full h-15 mt-5 flex flex-col gap">   
+                    <div className="row-start-3  w-full h-15 mt-5 flex flex-col">   
 
-                        <div className=" text-white flex flex-row gap-5 items-center justify-center rounded-bl-2xl rounded-tl-2xl">
-                            <div className="bg-[#1e293b] flex gap-2 justify-center flex-row items-center w-full rounded-tl-2xl rounded-tr-2xl">
-                                    <p>Buy: </p> 
-                                    <p className="font-extrabold text-2xl">{game[0]?.name}</p> 
+                        <div className=" text-white flex flex-row gap-5 items-center grid-rows-1 justify-center rounded-bl-2xl rounded-tl-2xl">
+                            <div className="bg-[#1e293b] flex p-3 gap-2 justify-center flex-col items-center w-full  overflow-hidden">
+                                    <p>Buy:</p>
+                                    <p className="font-extrabold  text-[90%] md:text-2xl whitespace-nowrap ">
+                                        {game[0]?.name}
+                                    </p> 
                             </div>
              
                             
                         </div>
-                        <div className="bg-[#1e293b]  h-4 text-white flex justify-center items-center p-5"><p className="bg-black p-1 rounded-2xl">${game[0]?.price}</p></div>
-                        <button className=" flex justify-center p-2 bg-[#404da1] text-white rounded-bl-2xl rounded-br-2xl" onClick={() => handleCart()}>{ctext}</button>
+                        <div className="flex items-center justify-baseline w-[100%]">
+                            <div className=" text-white flex justify-right items-center"><p className="bg-black  rounded-bl-2xl flex justify-center p-2">${game[0]?.price}</p></div>
+                            <button className=" flex justify-center p-2 bg-[#404da1] text-white rounded-br-2xl" onClick={() => handleCart()}>{ctext}</button>
+                        </div>
+                        
                     </div>
 
                 </div>

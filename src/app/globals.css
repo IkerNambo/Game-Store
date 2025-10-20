@@ -4,6 +4,19 @@
   --background: #484c42;
 
 }
+@keyframes scroll-bounce {
+  0%{
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll-bounce {
+  display: inline-block;
+  animation: scroll-bounce 5s infinite ease-in ;
+}
 
 @theme inline {
   --color-background: var(--background);

@@ -5,6 +5,7 @@ import { useWishlist } from "../context/wishlistContext";
 import { useCart } from "../context/cartContext";
 import {game} from "../types/gameType"
 
+
 type Game = {
     game: game
 }
