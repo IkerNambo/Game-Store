@@ -58,11 +58,12 @@ export default function Game(){
             
             <Navbar/>
                  
-                 <div className="w-[90%] flex m-auto justify-center text-2xl text-white bg-[#1e293b] mb-2 mt-2 "> <h1 className="font-bold">{game[0]?.name}</h1> </div>
+                 <div className="w-[90%] flex m-auto justify-center text-2xl text-white bg-[#1e293b] mb-4 mt-2 "> 
+                    <h1 className="font-bold">{game[0]?.name}</h1> </div>
                  <div className="grid grid-cols-1 gap-4 mb-20 md:grid-cols-2 md:grid-rows-3 h-fit md:h-180 w-[90%] m-auto mt-1 ">
                     
-                    <div className="h-[60%] md:h-90">
-                        <div className="w-[100%]">
+                    <div className="h-[70%]  w-[100%] md:h-90 flex-col gap-10">
+                        <div className="w-[100%] flex justify-center">
                             <Image src={game[0]?.mediaList[shown]} width={631} height={200} alt="Example image" className="rounded-sm"/>
                         </div>
 
@@ -98,7 +99,7 @@ export default function Game(){
                         </div>
                     </div>
                 
-                    <div className="row-start-3  w-full h-15 mt-5 flex flex-col">   
+                    <div className="row-start-3  w-full h-15  flex flex-col">   
 
                         <div className=" text-white flex flex-row gap-5 items-center grid-rows-1 justify-center rounded-bl-2xl rounded-tl-2xl">
                             <div className="bg-[#1e293b] rounded-2xl flex p-3 gap-2 justify-center flex-col items-center w-full  overflow-hidden">
