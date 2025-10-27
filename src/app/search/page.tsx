@@ -31,12 +31,15 @@ export default function Search(){
                          <div className="flex justify-center text-2xl text-white bg-[#1e293b] mb-2 mt-2"> <h1>Search</h1> </div>
                         <div className="bg-amber-300 flex justify-center items-center p-3">
                             <form 
-                            onSubmit={(e) => {e.preventDefault(); handleSearch()}}>
+                            onSubmit={(e) => {e.preventDefault(); handleSearch()}}
+                            className="flex gap-2">
+
                                 <input type="text" 
                                    placeholder="search" 
                                    ref={inputRef}
-                                   className="border border-amber-120 h-10 w-80"/>
-                                <input type="submit" onClick={() => handleSearch()}
+                                   className="border border-amber-120 h-10 w-80 text-center rounded-2xl"/>
+                                <input  className="hover:text-blue-600 transition duration-150 hover:scale-110"
+                                type="submit" value='Submit' onClick={() => handleSearch()}
                                                  onKeyDown={(e) => {if(e.key==='Enter')handleSearch();}}
                                                  />
                             </form>
